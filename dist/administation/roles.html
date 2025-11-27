@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Administration</title>
+  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <!-- Reuse your global doc styles -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Administration Guide</h1>
+        <p class="lead">
+          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <section id="admin-intro">
+        <h2>What is the Administration Section?</h2>
+        <p>
+          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
+          From here you can manage system modules, user roles, access controls, and monitor key system activities
+          such as login activity, audits, error logs and bulk communications.
+        </p>
+        <p>
+          This guide explains each item in the Administration menu and what it is used for.
+        </p>
+      </section>
+
+
+
+      <!-- ROLES -->
+      <details id="roles" class="accordion">
+        <summary>2. Roles</summary>
+        <div class="accordion-body">
+          <p>
+            <strong>Roles</strong> define permissions and responsibilities assigned to users in the system.
+            Each role controls what a user can see and do inside Unit Master.
+          </p>
+          <p>There are two main actions in this section:</p>
+          <ul>
+            <li>
+              <strong>Assign menus / sub menus</strong><br>
+              Opens a form where you choose which main modules and menus a role is allowed to see.
+            </li>
+            <li>
+              <strong>Custom permissions</strong><br>
+              This is typically accessed via a blue button and allows the administrator to define
+              specific actions each role is authorised to perform (for example create, edit, approve, delete).
+            </li>
+          </ul>
+           <figure class="step-image">
+              <img src="/dist/assets/img/role.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+
+          <p>
+            By configuring roles correctly, you ensure that users only access the parts of the system
+            that match their responsibilities.
+          </p>
+          <li>On the right side you will see add new role</li>
+        <figure class="step-image">
+              <img src="/dist/assets/img/add role.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+          <p>You press it then it will take you to a page where you will fill the form</p>
+          <figure class="step-image">
+              <img src="/dist/assets/img/NEW ROLE.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+          <li>You feel the form then you press save</li>
+ <figure class="step-image">
+              <img src="/dist/assets/img/SAVE.png" alt="EOD" height="150px" width="150px "/>
+          </figure>
+
+          <li>This will create a new role</li>
+          <li>Add permissions on the right side</li>
+          <figure class="step-image">
+              <img src="/dist/assets/img/add permission.png" alt="EOD" height="150px" width="150px "/>
+          </figure>
+          <p>This is to assign permissions to the new roles that were added.</p>
+           <figure class="step-image">
+              <img src="/dist/assets/img/permi.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+          <li>Then you assign permissions</li>
+           <figure class="step-image">
+              <img src="/dist/assets/img/assign.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+          <li>Then you press save</li>
+           <figure class="step-image">
+              <img src="/dist/assets/img/savee.png" alt="EOD" height="150px" width="150px "/>
+                </figure>
+              <li>It will take you to a page where you will assign permission you have  created</li>
+                <figure class="step-image">
+              <img src="/dist/assets/img/assin.png" alt="EOD" height="360px" width="560px "/>
+                </figure>
+          </figure>
+        </div>
+      </details>
+
+
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Administration</span>
+      </div>
+      <ul class="toc">
+        <li><a href="#roles">Roles</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

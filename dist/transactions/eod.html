@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master – EOD Processing and Fund Switch</title>
+  <meta name="description"
+        content="Guide for running EOD processing and fund switch operations in Unit Master." />
+  <!-- Même CSS que le reste du dashboard -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>EOD Processing and Fund Switch</h1>
+        <p class="lead">
+          How to run End of Day (EOD) processing and switch funds between accounts in Unit Master.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- EOD OVERVIEW -->
+      <section id="eod-overview">
+        <h2>EOD Processing</h2>
+        <p>
+          <strong>EOD</strong> stands for <strong>End of Day</strong>.
+          EOD processing is designed to tie up all the operations for a financial day
+          and prepare the system for the next day.
+        </p>
+        <p>
+          A user can run EOD for a single client or for all clients.
+          It also allows the user to run the EOD process for a single date
+          or for a selected period.
+        </p>
+      </section>
+
+      <!-- EOD STEP 1 -->
+      <details id="eod-step1" class="accordion">
+        <summary>Step One: Open the EOD Processing page</summary>
+        <div class="accordion-body">
+          <p>
+            Go to the <strong>Operations</strong> menu, then click on the
+            <strong>EOD Processing</strong> sub menu.
+            <figure class="step-image">
+              <img src="/dist/assets/img/operation.png" alt="EOD" height="170px" width="200px "/>
+            </figure>
+          </p>
+        </div>
+      </details>
+
+      <!-- EOD STEP 2 -->
+      <details id="eod-step2" class="accordion">
+        <summary>Step Two: Search for the member</summary>
+        <div class="accordion-body">
+          <p>
+             <figure class="step-image">
+              <img src="/dist/assets/img/searchh.png" alt="EOD" height="360px" width="560px "/>
+            </figure>
+
+            Use the <strong>Search</strong> button at the top of the page to look for a member.
+            Then select the member’s details from the dropdown menu below it.
+          </p>
+        </div>
+      </details>
+
+      <!-- EOD STEP 3 -->
+      <details id="eod-step3" class="accordion">
+        <summary>Step Three: Enter EOD parameters</summary>
+        <div class="accordion-body">
+          <p>
+            Key in the required details in the fields provided, for example:
+          </p>
+          <ul class="clean">
+            <li><strong>Date</strong> – single date or period</li>
+            <li><strong>Funds</strong> to be processed</li>
+          </ul>
+           <figure class="step-image">
+              <img src="/dist/assets/img/comp.png" alt="EOD" height="360px" width="560px "/>
+            </figure>
+
+
+
+          <p>
+            Once the user has set all the parameters, they click on the
+            <strong>Compute</strong> button.
+          </p>
+
+        </div>
+      </details>
+
+      <!-- EOD STEP 4 -->
+      <details id="eod-step4" class="accordion">
+        <summary>Step Four: Complete the EOD process</summary>
+        <div class="accordion-body">
+          <p>
+            The user confirms the details and clicks on the
+            <strong>Compute</strong> button to complete the EOD process.
+          </p>
+          <figure class="step-image">
+              <img src="/dist/assets/img/complete.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+
+        </div>
+      </details>
+
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page
+        <span class="badge">Operations</span>
+      </div>
+      <ul class="toc">
+        <li><a href="#eod-overview">EOD Processing – Overview</a></li>
+        <li><a href="#eod-step1">EOD Step 1 – Open page</a></li>
+        <li><a href="#eod-step2">EOD Step 2 – Search member</a></li>
+        <li><a href="#eod-step3">EOD Step 3 – Parameters</a></li>
+        <li><a href="#eod-step4">EOD Step 4 – Complete</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+</body>
+</html>

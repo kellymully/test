@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Administration</title>
+  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <!-- Reuse your global doc styles -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Administration Guide</h1>
+        <p class="lead">
+          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+
+      <!-- BULK EMAILS -->
+      <details id="bulk-emails" class="accordion">
+        <summary>9. Bulk Emails</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>Bulk Emails</strong> section is used to send emails to many clients at once.
+            Typical uses include:
+          </p>
+          <ul>
+            <li>Announcements or updates</li>
+            <li>Campaigns or product information</li>
+            <li>Important notices or reminders</li>
+          </ul>
+           <figure class="step-image">
+              <img src="/dist/assets/img/bulk.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+          <p>
+            Bulk email tools save time and ensure consistent messages reach all relevant clients.
+          </p>
+          <p>Enter the message you want to send</p>
+          <p>Put the email adress</p>
+          <p>You choose the file you want to upload </p>
+        </div>
+      </details>
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Administration</span>
+      </div>
+      <ul class="toc">
+
+        <li><a href="#bulk-emails">Bulk Emails</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

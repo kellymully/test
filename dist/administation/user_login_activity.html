@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Administration</title>
+  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <!-- Reuse your global doc styles -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Administration Guide</h1>
+        <p class="lead">
+          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+
+      <!-- USER LOGIN ACTIVITY -->
+      <details id="login-activity" class="accordion">
+        <summary>4. User Login Activity</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>User Login Activity</strong> section tracks login details for users.
+            It records key information such as:
+          </p>
+          <ul>
+            <li>Login date and time</li>
+            <li>Which user logged in</li>
+            <li>Sometimes the location or device used, depending on configuration</li>
+          </ul>
+          <figure class="step-image">
+              <img src="/dist/assets/img/login.png" alt="EOD" height="360px" width="560px "/>
+                </figure>
+          <p>
+            This log helps administrators monitor access, detect unusual activity and support audits
+            or security reviews.
+          </p>
+        </div>
+      </details>
+
+
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Administration</span>
+      </div>
+      <ul class="toc">
+        
+        <li><a href="#login-activity">User Login Activity</a></li>
+
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

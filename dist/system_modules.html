@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Administration</title>
+  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <!-- Reuse your global doc styles -->
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Administration Guide</h1>
+        <p class="lead">
+          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <section id="admin-intro">
+        <h2>What is the Administration Section?</h2>
+        <p>
+          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
+          From here you can manage system modules, user roles, access controls, and monitor key system activities
+          such as login activity, audits, error logs and bulk communications.
+        </p>
+        <p>
+          This guide explains each item in the Administration menu and what it is used for.
+        </p>
+      </section>
+
+      <!-- SYSTEM MODULES -->
+      <details id="system-modules" class="accordion">
+        <summary>1. System Modules</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>System Modules</strong> section contains the main menus of Unit Master.
+            Here administrators can:
+          </p>
+          <ul>
+            <li><strong>Add</strong> a new module name</li>
+            <li><strong>Edit</strong> an existing module</li>
+            <li><strong>Delete</strong> modules that are no longer needed</li>
+          </ul>
+          <p>
+            This allows you to control the overall structure of the system and which functional areas
+            are available to users.
+          </p>
+        </div>
+      </details>
+
+      <!-- ROLES -->
+      <details id="roles" class="accordion">
+        <summary>2. Roles</summary>
+        <div class="accordion-body">
+          <p>
+            <strong>Roles</strong> define permissions and responsibilities assigned to users in the system.
+            Each role controls what a user can see and do inside Unit Master.
+          </p>
+          <p>There are two main actions in this section:</p>
+          <ul>
+            <li>
+              <strong>Assign menus / sub menus</strong><br>
+              Opens a form where you choose which main modules and menus a role is allowed to see.
+            </li>
+            <li>
+              <strong>Custom permissions</strong><br>
+              This is typically accessed via a blue button and allows the administrator to define
+              specific actions each role is authorised to perform (for example create, edit, approve, delete).
+            </li>
+          </ul>
+          <p>
+            By configuring roles correctly, you ensure that users only access the parts of the system
+            that match their responsibilities.
+          </p>
+        </div>
+      </details>
+
+      <!-- CONTROL CATEGORIES -->
+      <details id="control-categories" class="accordion">
+        <summary>3. Control Categories</summary>
+        <div class="accordion-body">
+          <p>
+            <strong>Control Categories</strong> help the system administrator manage what different users
+            can see, do, or access inside Unit Master.
+          </p>
+          <p>
+            These settings define control groups or categories that can be linked to clients or users.
+            Once configured and assigned to a new client, they typically do not change.
+          </p>
+          <p>
+            This ensures consistent access behaviour and standardised control rules across the system.
+          </p>
+        </div>
+      </details>
+
+      <!-- USER LOGIN ACTIVITY -->
+      <details id="login-activity" class="accordion">
+        <summary>4. User Login Activity</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>User Login Activity</strong> section tracks login details for users.
+            It records key information such as:
+          </p>
+          <ul>
+            <li>Login date and time</li>
+            <li>Which user logged in</li>
+            <li>Sometimes the location or device used, depending on configuration</li>
+          </ul>
+          <p>
+            This log helps administrators monitor access, detect unusual activity and support audits
+            or security reviews.
+          </p>
+        </div>
+      </details>
+
+      <!-- COMPANY -->
+      <details id="company" class="accordion">
+        <summary>5. Company</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>Company</strong> section stores general details about the organisation using Unit Master.
+            Typical information includes:
+          </p>
+          <ul>
+            <li>Company or organisation name</li>
+            <li>Registration and contact details</li>
+            <li>Address and other general information</li>
+          </ul>
+          <p>
+            Keeping this information up to date ensures that statements, reports and communications
+            show the correct company details.
+          </p>
+        </div>
+      </details>
+
+      <!-- USER AUDIT -->
+      <details id="user-audit" class="accordion">
+        <summary>6. User Audit</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>User Audit</strong> tracks actions performed inside the system.
+            It helps answer questions such as:
+          </p>
+          <ul>
+            <li>Who changed a record?</li>
+            <li>What was updated or deleted?</li>
+            <li>When did the change happen?</li>
+          </ul>
+          <p>
+            This is essential for accountability, compliance and internal control.
+          </p>
+        </div>
+      </details>
+
+      <!-- COMMUNICATION TEMPLATES -->
+      <details id="communication-templates" class="accordion">
+        <summary>7. Communication Templates</summary>
+        <div class="accordion-body">
+          <p>
+            <strong>Communication Templates</strong> are used to set up standard messages that can be sent
+            to clients. Examples include:
+          </p>
+          <ul>
+            <li>Welcome messages</li>
+            <li>Transaction confirmations</li>
+            <li>Monthly or quarterly statements notifications</li>
+          </ul>
+          <p>
+            Templates help keep communication consistent and save time when sending the same type
+            of message to many clients.
+          </p>
+        </div>
+      </details>
+
+      <!-- ERROR LOGS -->
+      <details id="error-logs" class="accordion">
+        <summary>8. Error Logs</summary>
+        <div class="accordion-body">
+          <p>
+            <strong>Error Logs</strong> capture technical issues that occur while the system is running.
+            When the system fails or encounters an error, information is saved in the database or a log file.
+          </p>
+          <p>
+            These logs typically store:
+          </p>
+          <ul>
+            <li>Error type and message</li>
+            <li>Date and time of the error</li>
+            <li>Technical details to help developers diagnose the issue</li>
+          </ul>
+          <p>
+            Administrators and support teams use error logs to troubleshoot problems and improve stability.
+          </p>
+        </div>
+      </details>
+
+      <!-- BULK EMAILS -->
+      <details id="bulk-emails" class="accordion">
+        <summary>9. Bulk Emails</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>Bulk Emails</strong> section is used to send emails to many clients at once.
+            Typical uses include:
+          </p>
+          <ul>
+            <li>Announcements or updates</li>
+            <li>Campaigns or product information</li>
+            <li>Important notices or reminders</li>
+          </ul>
+          <p>
+            Bulk email tools save time and ensure consistent messages reach all relevant clients.
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Administration</span>
+      </div>
+      <ul class="toc">
+        <li><a href="#admin-intro">Overview</a></li>
+        <li><a href="#system-modules">System Modules</a></li>
+        <li><a href="#roles">Roles</a></li>
+        <li><a href="#control-categories">Control Categories</a></li>
+        <li><a href="#login-activity">User Login Activity</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#user-audit">User Audit</a></li>
+        <li><a href="#communication-templates">Communication Templates</a></li>
+        <li><a href="#error-logs">Error Logs</a></li>
+        <li><a href="#bulk-emails">Bulk Emails</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

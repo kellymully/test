@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Administration</title>
+  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <!-- Reuse your global doc styles -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Administration Guide</h1>
+        <p class="lead">
+          Overview of the Administration section in Unit Master, including system modules, roles, gories and system monitoring tools.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <section id="admin-intro">
+        <h2>What is the Administration Section?</h2>
+        <p>
+          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
+          From here you can manage system modules, user roles, access controls, and monitor key system activities
+          such as login activity, audits, error logs and bulk communications.
+        </p>
+        <p>
+          This guide explains each item in the Administration menu and what it is used for.
+        </p>
+      </section>
+
+
+
+      <!-- GORIES -->
+      <details id="control-categories" class="accordion">
+        <summary>3. control categories</summary>
+        <div class="accordion-body">
+          <p>
+            <strong>control categories</strong> help the system administrator manage what different users
+            can see, do, or access inside Unit Master.
+          </p>
+          <figure class="step-image">
+              <img src="/dist/assets/img/category.png" alt="EOD" height="360px" width="560px "/>
+                </figure>
+          <p>
+            These settings define control groups or categories that can be linked to clients or users.
+            Once configured and assigned to a new client, they typically do not change.
+          </p>
+          <p>
+            This ensures consistent access behaviour and standardised control rules across the system.
+          </p>
+          <li>On the right side theres a button add category</li>
+
+<figure class="step-image">
+              <img src="/dist/assets/img/add category.png" alt="EOD" height="360px" width="560px "/>
+                </figure>
+                <p>Then it will display on the page of control categories.</p>
+        </div>
+      </details>
+
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Administration</span>
+      </div>
+      <ul class="toc">
+        <li><a href="#control-categories">gories</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

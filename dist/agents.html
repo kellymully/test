@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Agents</title>
+  <meta name="description" content="Documentation guide for managing agents in Unit Master." />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Agents Management Guide</h1>
+        <p class="lead">
+          A simple and clear guide to understanding and managing agents in Unit Master.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- Introduction -->
+      <section id="intro">
+        <h2>What are Agents?</h2>
+        <p>
+          In Unit Master, <strong>Agents</strong> are people who introduce clients to invest
+          in your organisation’s funds. They help bring in new members and support client
+          onboarding and account management.
+        </p>
+        <p>
+          The <strong>Agents List</strong> shows all agents registered in the system.
+          From this section, you can add new agents, update their details, or change
+          the agent assigned to a client.
+        </p>
+      </section>
+
+      <!-- Section 1 -->
+      <details id="agents-list" class="accordion">
+        <summary>1. Agents List</summary>
+        <div class="accordion-body">
+          <p>
+            The Agents List displays all agents currently registered in Unit Master.
+            It allows you to:
+          </p>
+          <figure class="step-image">
+                <img src="assets/img/list.png"
+                     alt="detail image" />
+              </figure>
+          <ul class="clean">
+            <li>View existing agents and their details</li>
+            <li>Add new agents to the system</li>
+            <li>Edit or update agent information</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Section 2 -->
+      <details id="add-agent" class="accordion">
+        <summary>2. Adding a New Agent</summary>
+        <div class="accordion-body">
+          <p>
+            To add a new agent:
+          </p>
+          <ul class="clean">
+            <li>Go to the <strong>Agents</strong> section from the sidebar.</li>
+             <figure class="step-image">
+                <img src="assets/img/agents.png" alt="account details" width="250px">
+                </figure>
+            <li>Click on <strong>Add New Agent</strong>.</li>
+            <figure class="step-image">
+                <img src="assets/img/agent.png"
+                     alt=" add agent image" />
+              </figure>
+            <li>Fill in the agent’s personal and contact details.</li>
+            <figure class="step-image">
+                <img src="assets/img/detail.png"
+                     alt="detail image" />
+              </figure>
+            <li>Click <strong>Submit</strong> to save.</li>
+            <figure class="step-image">
+                <img src="assets/img/submit.png" alt="account details" width="250px">
+                </figure>
+          </ul>
+          <p class="note">
+            Make sure the agent’s contact details are accurate because they are linked
+            to multiple client accounts.
+          </p>
+        </div>
+      </details>
+
+      <!-- Section 3 -->
+      <details id="change-agent" class="accordion">
+        <summary>3. Changing a Client’s Agent</summary>
+        <div class="accordion-body">
+          <p>
+            If a client requests to change their agent, Unit Master allows you to do so easily.
+          </p>
+         <figure class="step-image">
+                <img src="assets/img/change.png"
+                     alt="detail image" />
+              </figure>
+          <ul class="clean">
+            <li>Select the client from the client list.</li>
+            <li>Navigate to their account details.</li>
+            <li>Change the assigned agent from the dropdown list.</li>
+            <li>Save the changes.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Section 4 -->
+      <details id="member-types" class="accordion">
+        <summary>4. Agent type listing</summary>
+        <div class="accordion-body">
+          <p>
+            Unit Master supports different types of clients, each linked to agents:
+          </p>
+           <figure class="step-image">
+                <img src="assets/img/types.png"
+                     alt="detail image" />
+              </figure>
+
+        <li>Add the agent type</li>
+        <figure class="step-image">
+                <img src="assets/img/type.png" alt="account details" width="150px">
+                </figure>
+                <li>fill the type name and description</li>
+
+                <figure class="step-image">
+                                <img src="assets/img/description.png"
+                                    alt="detail image" />
+                            </figure>
+                <li>Then you save</li>
+
+<figure class="step-image">
+                <img src="assets/img/save.png" alt="account details" width="150px">
+                </figure>
+
+        </div>
+      </details>
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Agents</span>
+      </div>
+
+      <ul class="toc">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#agents-list">Agents List</a></li>
+        <li><a href="#add-agent">Add New Agent</a></li>
+        <li><a href="#change-agent">Change Agent</a></li>
+        <li><a href="#member-types">Member Types</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Fix scroll bug for table of contents -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+:root{
+  --bg: #f4f8fc;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --radius: 12px;
+  --container: 1100px;
+  --flow: 18px;
+  --max-sidew: 300px;
+}
+
+/* Reset de base */
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  min-height:100%;
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:#0f172a;
+  background:linear-gradient(180deg,var(--bg),#eef6ff);
+}
+
+/* Liens */
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+/* Layout principal */
+.wrap{
+  max-width:var(--container);
+  margin:20px auto 28px;      /* plus d’espace en haut */
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:24px;
+  overflow:visible;
+}
+
+@media (max-width:960px){
+  .wrap{
+    grid-template-columns:1fr;
+    padding:14px;
+  }
+}
+
+/* CARTES – totalement plates + rien de coupé */
+.card,
+.card-body{
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:0;
+  overflow:visible !important;   /* très important pour voir le haut du contenu */
+}
+
+/* Header */
+header.doc{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:20px;
+  padding:16px 0;
+}
+
+.brand{
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),#4f83ff);
+  display:grid;
+  place-items:center;
+  color:white;
+  font-weight:700;
+  font-size:18px;
+}
+
+h1{
+  margin:0;
+  font-size:22px;
+}
+
+p.lead{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Contenu texte */
+.content{
+  padding:8px 0;
+  overflow:visible;
+}
+
+section{
+  margin-bottom:var(--flow);
+  overflow:visible;
+}
+
+section h2{
+  font-size:16px;
+  margin:0 0 8px;
+}
+
+section p{
+  margin:0 0 10px;
+  line-height:1.6;
+  color:black;
+}
+
+/* Bloc définition */
+.definition{
+  border-left:4px solid var(--accent);
+  background:#f8fbff;
+  padding:12px 14px;
+  border-radius:8px;
+  margin:8px 0;
+}
+
+/* Notes / texte secondaire */
+.muted{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.note{
+  background:linear-gradient(90deg,#fff,#fbfdff);
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  font-size:14px;
+  color:#0f172a;
+}
+
+/* ACCORDION – plat comme la page, léger arrondi */
+details.accordion{
+  border:none;
+  background:transparent;
+  padding:0;
+  margin:8px 0;
+}
+
+/* pas de fond spécial quand c’est ouvert */
+details.accordion[open]{
+  background:transparent;
+}
+
+/* Barre cliquable */
+details.accordion summary{
+  list-style:none;
+  cursor:pointer;
+  padding:12px 16px;
+  font-weight:600;
+  color:var(--accent);
+  position:relative;
+  user-select:none;
+  background:transparent;   /* même fond que la page */
+  border-radius:8px;        /* coins un peu courbés */
+}
+
+details.accordion[open] summary{
+  border-radius:8px 8px 0 0;
+}
+
+details.accordion summary::-webkit-details-marker{
+  display:none;
+}
+
+details.accordion summary::after{
+  content:"▾";
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:12px;
+  transition:transform .18s ease;
+  color:var(--muted);
+}
+
+details.accordion[open] summary::after{
+  transform:translateY(-50%) rotate(180deg);
+}
+/* Effet survol comme Facebook */
+details.accordion summary{
+  transition: background-color .18s ease;
+}
+
+details.accordion summary:hover{
+  background:#dce0e4;      /* petite couleur au survol */
+}
+
+details.accordion[open] summary{
+  background:#dce0e4;
+}
+
+
+/* Contenu du déroulant */
+.accordion-body{
+  padding:8px 18px 14px 18px;
+  margin:0;
+  border-top:none;
+  font-size:14px;
+  line-height:1.6;
+  color:#111827;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  background:transparent;   /* plus de rectangle coloré */
+}
+
+/* Images des étapes */
+.step-inline{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  margin:10px 0;
+  flex-wrap:wrap;
+}
+
+.step-inline img{
+  max-width:260px;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 4px 16px rgba(15,23,42,0.12);
+}
+
+.step-image{
+  margin:10px 0;
+  text-align:center;
+}
+
+.step-image img{
+  max-width:100%;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 4px 16px rgba(15,23,42,0.12);
+}
+
+/* TABLE OF CONTENTS */
+aside{
+  margin-top:8px;
+  padding-left:32px;
+}
+
+.toc-title{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.toc{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.toc li{
+  margin:6px 0;
+}
+
+.toc a{
+  display:inline-block;
+  padding:4px 6px;
+  border-radius:6px;
+  font-weight:600;
+  color:var(--accent);
+}
+
+.toc a:hover{
+  background:#eef6ff;
+}
+
+/* Petit texte bas de carte */
+footer.small{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 8px;
+  border-radius:999px;
+  background:#eef6ff;
+  color:var(--accent);
+  font-weight:600;
+  font-size:13px;
+  margin-left:8px;
+}
+
+/* Impression */
+@media print{
+  body{
+    background:white;
+  }
+  aside{
+    display:none;
+  }
+  .wrap{
+    max-width:100%;
+    margin:0;
+  }
+  .card,
+  .card-body{
+    box-shadow:none;
+    background:white;
+    padding:0;
+  }
+}

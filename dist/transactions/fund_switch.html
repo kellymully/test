@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master – EOD Processing and Fund Switch</title>
+  <meta name="description"
+        content="Guide for running EOD processing and fund switch operations in Unit Master." />
+  <!-- Même CSS que le reste du dashboard -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>EOD Processing and Fund Switch</h1>
+        <p class="lead">
+          How to run End of Day (EOD) processing and switch funds between accounts in Unit Master.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- FUND SWITCH OVERVIEW -->
+      <section id="fundswitch-overview">
+        <h2>Fund Switch</h2>
+        <p>
+          The <strong>Fund Switch</strong> function allows the user to move funds
+          from one fund to another within the same member account.
+        </p>
+      </section>
+
+      <!-- FUND SWITCH STEP 1 -->
+      <details id="fs-step1" class="accordion">
+        <summary>Step One: Open the Fund Switch page</summary>
+        <div class="accordion-body">
+          <p>
+            Go to the <strong>Transactions</strong> menu, then click on the
+            <strong>Fund Switch</strong> sub menu.
+          </p>
+          <figure class="step-image">
+              <img src="/dist/assets/img/switch.png" alt="EOD" height="150px" width="200px "/>
+          </figure>
+
+        </div>
+      </details>
+
+      <!-- FUND SWITCH STEP 2 -->
+      < id="fs-step2" class="accordion">
+        <summary>Step Two: Select the member</summary>
+        <div class="accordion-body">
+          <p>
+            Initiate a switch by:
+          </p>
+          <ul class="clean">
+            <li>Searching for the member using the <strong>Search</strong> button on the top left side.</li>
+            <li>Selecting the member’s details from the dropdown button on the top right side.</li>
+          </ul>
+        </div>
+
+      <figure class="step-image">
+              <img src="/dist/assets/img/seach.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+details>
+
+      <!-- FUND SWITCH STEP 3 -->
+      <details id="fs-step3" class="accordion">
+        <summary>Step Three: Choose date and accounts</summary>
+        <div class="accordion-body">
+          <p>
+            Select:
+          </p>
+          <ul class="clean">
+            <li>The <strong>transaction date</strong>.</li>
+            <li>The account <strong>funds are moving from</strong>.</li>
+            <li>The account <strong>funds are moving to</strong>.</li>
+          </ul>
+            <figure class="step-image">
+              <img src="/dist/assets/img/new.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+
+          <p>
+            The user can also create a new account for the member by clicking the
+            <strong>New Account</strong> button. A pop up appears and the user
+            populates the fields with the required details.
+          </p>
+        </div>
+      </details>
+
+      <!-- FUND SWITCH STEP 4 -->
+      <details id="fs-step4" class="accordion">
+        <summary>Step Four: Select switch type and reason</summary>
+        <div class="accordion-body">
+          <p>
+            Select the <strong>switch type</strong>:
+          </p>
+          <ul class="clean">
+            <li>Move <strong>all funds</strong>, or</li>
+            <li>Move <strong>partial funds</strong>.</li>
+          </ul>
+          <figure class="step-image">
+              <img src="/dist/assets/img/swich.png" alt="EOD" height="360px" width="560px "/>
+          </figure>
+
+          <p>
+            Enter a <strong>reason for the switch</strong> and, if needed,
+            add a short narrative explaining the reason.
+          </p>
+        </div>
+      </details>
+
+      <!-- FUND SWITCH STEP 5 -->
+      <details id="fs-step5" class="accordion">
+        <summary>Step Five: Submit and confirm</summary>
+        <div class="accordion-body">
+          <p>
+            Click the <strong>Submit</strong> button. A confirmation window appears.
+            Once the user confirms the switch, the transaction is complete.
+          </p>
+         
+
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page
+        <span class="badge">Operations</span>
+      </div>
+      <ul class="toc">
+
+        <li><a href="#fundswitch-overview">Fund Switch – Overview</a></li>
+        <li><a href="#fs-step1">Fund Switch Step 1 – Open page</a></li>
+        <li><a href="#fs-step2">Fund Switch Step 2 – Member</a></li>
+        <li><a href="#fs-step3">Fund Switch Step 3 – Accounts</a></li>
+        <li><a href="#fs-step4">Fund Switch Step 4 – Type & reason</a></li>
+        <li><a href="#fs-step5">Fund Switch Step 5 – Submit</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+</body>
+</html>

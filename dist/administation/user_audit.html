@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Master — Administration</title>
+  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <!-- Reuse your global doc styles -->
+  <link rel="stylesheet" href="/dist/css/dashboard.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- MAIN CONTENT -->
+  <main class="card">
+    <header class="doc">
+      <div class="brand">UM</div>
+      <div>
+        <h1>Administration Guide</h1>
+        <p class="lead">
+          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- INTRO -->
+      <section id="admin-intro">
+        <h2>What is the Administration Section?</h2>
+        <p>
+          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
+          From here you can manage system modules, user roles, access controls, and monitor key system activities
+          such as login activity, audits, error logs and bulk communications.
+        </p>
+        <p>
+          This guide explains each item in the Administration menu and what it is used for.
+        </p>
+      </section>
+
+
+
+      <!-- USER AUDIT -->
+      <details id="user-audit" class="accordion">
+        <summary>6. User Audit</summary>
+        <div class="accordion-body">
+          <p>
+            The <strong>User Audit</strong> tracks actions performed inside the system.
+            It helps answer questions such as:
+          </p>
+          <ul>
+            <li>Who changed a record?</li>
+            <li>What was updated or deleted?</li>
+            <li>When did the change happen?</li>
+          </ul>
+          <p>
+            This is essential for accountability, compliance and internal control.
+          </p>
+        </div>
+      </details>
+
+
+    </div>
+  </main>
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="card" aria-label="Table of contents">
+    <div>
+      <div class="toc-title">
+        On this page <span class="badge">Administration</span>
+      </div>
+      <ul class="toc">
+        <li><a href="#user-audit">User Audit</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toc a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>
