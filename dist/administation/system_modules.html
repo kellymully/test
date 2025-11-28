@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — System Modules</title>
+  <meta name="description" content="Documentation guide for the System Modules section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -19,70 +19,95 @@
       <div>
         <h1>System Modules Guide</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The System Modules section controls the main menus of Unit Master and how users
+          navigate through the system.
         </p>
       </div>
     </header>
 
     <div class="content">
 
-      <!-- INTRO -->
+      <!-- INTRO (optionnel) -->
       <section id="admin-intro">
-        <h2>What is the Administration Section?</h2>
+        <h2>What is the System Modules section?</h2>
         <p>
-          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
-          From here you can manage system modules, user roles, access controls, and monitor key system activities
-          such as login activity, audits, error logs and bulk communications.
-        </p>
-        <p>
-          This guide explains each item in the Administration menu and what it is used for.
+          The <strong>System Modules</strong> area is where system administrators configure
+          the main modules or menus that appear in Unit Master. From here you control the
+          top level structure of the application.
         </p>
       </section>
 
-      <!-- SYSTEM MODULES -->
+      <!-- SYSTEM MODULES – même style que "Filling in Personal Details" -->
       <details id="system-modules" class="accordion">
-        <summary>1. System Modules</summary>
+        <summary> System Modules overview</summary>
         <div class="accordion-body">
+
           <p>
             The <strong>System Modules</strong> section contains the main menus of Unit Master.
-            Here administrators can:
-              <figure class="step-image">
-              <img src="/dist/assets/img/modules.png" alt="EOD" height="360px" width="560px "/>
-          </figure>
+            Here administrators can see a list of all modules and manage them.
           </p>
-          <ul>
-            <li><strong>Add</strong> a new module name</li>
-            <li><strong>Edit</strong> an existing module</li>
-            <li><strong>Delete</strong> modules that are no longer needed</li>
-          </ul>
-          <p>
-            This allows you to control the overall structure of the system and which functional areas
-            are available to users.
-          </p>
-          <li>Add new module</li>
-          <h1>A module</h1>
-          <p>A module is a specific section of a system that groups related features under one menu for easy access. Adding a new module simply means adding a new menu item to the sidebar that opens a new set of functions or pages.</p>
-          <p>This is where you add a new menu</p>
-            <figure class="step-image">
-              <img src="/dist/assets/img/NM.png" alt="EOD" height="360px" width="560px "/>
-          </figure>
-          <li>Then you press save</li>
+
+          <!-- Capture principale -->
           <figure class="step-image">
-              <img src="/dist/assets/img/savee.png" alt="EOD" height="150px" width="150px "/>
+            <img src="/dist/assets/img/modules.png"
+                 alt="System modules listing"
+                 height="360" width="560" />
           </figure>
-          <li>This will add a new module to the page</li>
 
+          <p>From this page administrators can:</p>
+          <ul class="clean">
+            <li><strong>Add</strong> a new module name.</li>
+            <li><strong>Edit</strong> an existing module.</li>
+            <li><strong>Delete</strong> modules that are no longer needed.</li>
+          </ul>
 
+          <p>
+            This allows you to control the overall structure of the system and which functional
+            areas are available to users.
+          </p>
+
+          <h3>Add new module</h3>
+
+          <p>
+            To add a new module, use the <strong>New Module</strong> form:
+          </p>
+
+          <!-- Capture du formulaire "New Module" -->
+          <figure class="step-image">
+            <img src="/dist/assets/img/NM.png"
+                 alt="New module form"
+                 height="360" width="560" />
+          </figure>
+
+          <p>Fill in the following fields:</p>
+          <ul class="clean">
+            <li><strong>Module Name</strong> Enter the full name of the menu item.</li>
+            <li><strong>Short Name</strong> Enter the short version used where space is limited.</li>
+            <li><strong>Module URL</strong> Enter the link or route that opens when the menu is clicked.</li>
+            <li><strong>Module ICON</strong> Enter the icon class (for example <code>fa fa-users</code>).</li>
+          </ul>
+
+          <p>Then press <strong>Save</strong>:</p>
+
+          <!-- Bouton Save -->
+          <figure class="step-image">
+            <img src="/dist/assets/img/savee.png"
+                 alt="Save module button"
+                 height="150" width="150" />
+          </figure>
+
+          <p>
+            This will add a new module to the page and the menu will appear in the sidebar
+            for users who have the correct role.
+          </p>
 
         </div>
       </details>
 
-
-
     </div>
   </main>
 
-  <!-- TABLE OF CONTENTS -->
+  <!-- TABLE OF CONTENTS
   <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
@@ -92,11 +117,11 @@
         <li><a href="#system-modules">System Modules</a></li>
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
-<!-- Smooth scroll for Table of Contents (avoids blocage / bug) -->
+<!-- Smooth scroll for Table of Contents -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".toc a").forEach(link => {
@@ -111,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

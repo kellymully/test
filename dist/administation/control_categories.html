@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — Control Categories</title>
+  <meta name="description" content="Documentation guide for the Control Categories section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,9 +17,10 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>Control Categories</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, gories and system monitoring tools.
+          The Control Categories section is used to define access groups that determine
+          what different users or clients can see and do inside Unit Master.
         </p>
       </div>
     </header>
@@ -28,30 +29,34 @@
 
       <!-- INTRO -->
       <section id="admin-intro">
-        <h2>What is the Administration Section?</h2>
+        <h2>What are Control Categories?</h2>
         <p>
-          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
-          From here you can manage system modules, user roles, access controls, and monitor key system activities
-          such as login activity, audits, error logs and bulk communications.
+          <strong>Control Categories</strong> are configuration groups that help the system
+          administrator manage visibility and access rules across Unit Master. Instead of
+          configuring each user or client individually, you create a category and link it
+          to multiple users or clients.
         </p>
         <p>
-          This guide explains each item in the Administration menu and what it is used for.
+          Once a control category is assigned to a client or user, it normally stays the same
+          and ensures consistent behaviour for access rights and restrictions.
         </p>
       </section>
 
-
-
-      <!-- GORIES -->
+      <!-- CONTROL CATEGORIES -->
       <details id="control-categories" class="accordion">
-        <summary>3. control categories</summary>
+        <summary>Control categories</summary>
         <div class="accordion-body">
           <p>
-            <strong>control categories</strong> help the system administrator manage what different users
-            can see, do, or access inside Unit Master.
+            The <strong>Control Categories</strong> page helps the system administrator manage what
+            different users or clients can see, do, or access inside Unit Master.
           </p>
+
           <figure class="step-image">
-              <img src="/dist/assets/img/category.png" alt="EOD" height="360px" width="560px "/>
-                </figure>
+            <img src="/dist/assets/img/category.png"
+                 alt="Control categories listing"
+                 height="360" width="560" />
+          </figure>
+
           <p>
             These settings define control groups or categories that can be linked to clients or users.
             Once configured and assigned to a new client, they typically do not change.
@@ -59,30 +64,40 @@
           <p>
             This ensures consistent access behaviour and standardised control rules across the system.
           </p>
-          <li>On the right side theres a button add category</li>
 
-<figure class="step-image">
-              <img src="/dist/assets/img/add category.png" alt="EOD" height="360px" width="560px "/>
-                </figure>
-                <p>Then it will display on the page of control categories.</p>
+          <h3>Add a new control category</h3>
+          <p>
+            On the right side of the Control Categories page there is an <strong>Add Category</strong> button:
+          </p>
+
+          <figure class="step-image">
+            <img src="/dist/assets/img/add category.png"
+                 alt="Add category button and form"
+                 height="360" width="560" />
+          </figure>
+
+          <p>
+            Click this button to open the form, capture the details of the new category,
+            then save. The new control category will appear in the list and can be assigned
+            to clients or users according to your access rules.
+          </p>
         </div>
       </details>
-
 
     </div>
   </main>
 
-  <!-- TABLE OF CONTENTS -->
+  <!-- TABLE OF CONTENTS
   <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
         On this page <span class="badge">Administration</span>
       </div>
       <ul class="toc">
-        <li><a href="#control-categories">gories</a></li>
+        <li><a href="#control-categories">Control Categories</a></li>
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
@@ -101,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

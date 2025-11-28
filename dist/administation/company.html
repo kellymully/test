@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — Company</title>
+  <meta name="description" content="Documentation guide for the Company section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,9 +17,10 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>Company</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The Company section stores the official details of the organisation using Unit Master,
+          which are used on statements, reports and client communications.
         </p>
       </div>
     </header>
@@ -27,53 +28,63 @@
     <div class="content">
 
       <!-- INTRO -->
-      <section id="admin-intro">
-        <h2>What is the Administration Section?</h2>
+      <section id="company-intro">
+        <h2>What is the Company section?</h2>
         <p>
-          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
-          From here you can manage system modules, user roles, access controls, and monitor key system activities
-          such as login activity, audits, error logs and bulk communications.
+          The <strong>Company</strong> page is where administrators capture and maintain the
+          master information about the organisation that operates the fund or investment product.
+          This information is reused across the system wherever the company name and contact details
+          need to appear.
         </p>
-       
         <p>
-          This guide explains each item in the Administration menu and what it is used for.
+          Keeping this page up to date ensures that all statements, reports and automated
+          communications display the correct legal name, address and contact information.
         </p>
       </section>
 
-
-
       <!-- COMPANY -->
       <details id="company" class="accordion">
-        <summary>5. Company</summary>
+        <summary>zView and update Company details</summary>
         <div class="accordion-body">
           <p>
             The <strong>Company</strong> section stores general details about the organisation using Unit Master.
             Typical information includes:
           </p>
-          <ul>
-            <li>Company or organisation name</li>
-            <li>Registration and contact details</li>
-            <li>Address and other general information</li>
+          <ul class="clean">
+            <li><strong>Company or organisation name</strong></li>
+            <li><strong>Registration and contact details</strong> (such as registration number, phone, email)</li>
+            <li><strong>Physical and postal address</strong></li>
+            <li><strong>Other general information</strong> that should appear on client statements or reports</li>
           </ul>
-           <figure class="step-image">
-              <img src="/dist/assets/img/com.png" alt="EOD" height="360px" width="560px "/>
-                </figure>
+
+          <figure class="step-image">
+            <img src="/dist/assets/img/com.png"
+                 alt="Company details main screen"
+                 height="360" width="560" />
+          </figure>
+
           <p>
-            Keeping this information up to date ensures that statements, reports and communications
-            show the correct company details.
+            When you open the Company page, you can review the existing information and make changes
+            where necessary.
           </p>
-           <figure class="step-image">
-              <img src="/dist/assets/img/detal.png" alt="EOD" height="360px" width="560px "/>
-                </figure>
+
+          <figure class="step-image">
+            <img src="/dist/assets/img/detal.png"
+                 alt="Company details form"
+                 height="360" width="560" />
+          </figure>
+
+          <p>
+            After updating the fields, save the changes so that all future statements, reports and system
+            communications use the correct company details.
+          </p>
         </div>
       </details>
-
-
 
     </div>
   </main>
 
-  <!-- TABLE OF CONTENTS -->
+  <!-- TABLE OF CONTENTS
   <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
@@ -83,7 +94,7 @@
         <li><a href="#company">Company</a></li>
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
@@ -102,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

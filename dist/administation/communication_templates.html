@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — Communication Templates</title>
+  <meta name="description" content="Documentation guide for the Communication Templates section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,61 +17,88 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>Communication Templates</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The Communication Templates section is used to define standard messages that Unit Master
+          can send automatically or in bulk to clients, keeping communication consistent and professional.
         </p>
       </div>
     </header>
 
     <div class="content">
 
+      <!-- INTRO -->
+      <section id="comm-intro">
+        <h2>What are Communication Templates?</h2>
+        <p>
+          <strong>Communication Templates</strong> are reusable message layouts for emails or SMS
+          sent from Unit Master. Instead of typing the same text every time, administrators configure
+          a template once and then reuse it whenever the same type of message needs to be sent.
+        </p>
+        <p>
+          This ensures that all clients receive clear, consistent and branded communication, and
+          it saves time for the operations and customer service teams.
+        </p>
+      </section>
 
       <!-- COMMUNICATION TEMPLATES -->
       <details id="communication-templates" class="accordion">
-        <summary>7. Communication Templates</summary>
+        <summary>Manage Communication Templates</summary>
         <div class="accordion-body">
           <p>
             <strong>Communication Templates</strong> are used to set up standard messages that can be sent
             to clients. Examples include:
           </p>
-          <ul>
-            <li>Welcome messages</li>
-            <li>Transaction confirmations</li>
-            <li>Monthly or quarterly statements notifications.</li>
+          <ul class="clean">
+            <li>Welcome messages for new clients.</li>
+            <li>Transaction confirmations (for example, subscriptions or redemptions).</li>
+            <li>Monthly or quarterly statement notifications.</li>
           </ul>
+
           <figure class="step-image">
-              <img src="/dist/assets/img/templete.png" alt="EOD" height="360px" width="560px "/>
+            <img src="/dist/assets/img/templete.png"
+                 alt="Communication templates listing"
+                 height="360" width="560" />
           </figure>
 
           <p>
             Templates help keep communication consistent and save time when sending the same type
             of message to many clients.
           </p>
-          <li>user can edit and click on save to update the communication template.</li>
-           <figure class="step-image">
-              <img src="/dist/assets/img/comm.png" alt="EOD" height="360px" width="560px "/>
+
+          <h3>Edit and update a template</h3>
+          <p>
+            A user can open an existing communication template, make changes to the content and
+            click <strong>Save</strong> to update it:
+          </p>
+
+          <figure class="step-image">
+            <img src="/dist/assets/img/comm.png"
+                 alt="Edit communication template screen"
+                 height="360" width="560" />
           </figure>
+
+          <p>
+            Once saved, the updated template will be used for all future messages of that type,
+            ensuring that clients always receive the latest approved wording.
+          </p>
         </div>
       </details>
-
-
 
     </div>
   </main>
 
   <!-- TABLE OF CONTENTS -->
-  <aside class="card" aria-label="Table of contents">
+  <!-- <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
         On this page <span class="badge">Administration</span>
       </div>
       <ul class="toc">
         <li><a href="#communication-templates">Communication Templates</a></li>
-
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
@@ -90,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

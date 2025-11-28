@@ -19,14 +19,13 @@
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
         <!-- Navbar Brand -->
-            <a class="navbar-brand ps-3" href="#">
+        <a class="navbar-brand ps-3" href="#">
             <img
-            src="assets/img/wiz global.jpg"
-            alt="UM logo"
-            style="height:40px; width:auto; margin-right:8px; object-fit:contain; vertical-align:middle;">
+                src="assets/img/wiz global.jpg"
+                alt="UM logo"
+                style="height:40px; width:auto; margin-right:8px; object-fit:contain; vertical-align:middle;">
             Unit Master
-            </a>
-
+        </a>
 
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
@@ -38,7 +37,7 @@
             <div class="input-group">
                 <input
                     class="form-control"
-                    type="text"k
+                    type="text"
                     placeholder="Search for..."
                     aria-label="Search for..."
                     aria-describedby="btnNavbarSearch"
@@ -54,7 +53,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                    data-bs-toggle="dropdown" aria-expanded="false">
-                   <i class="fas fa-user fa-fw"></i>
+                    <i class="fas fa-user fa-fw"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Settings</a></li>
@@ -81,7 +80,6 @@
                             Introduction
                         </a>
 
-
                         <!-- ONBOARDING -->
                         <div class="sb-sidenav-menu-heading">Members Onboarding</div>
 
@@ -91,7 +89,7 @@
                            data-bs-target="#collapseOnboarding"
                            aria-expanded="false"
                            aria-controls="collapseOnboarding">
-                             <div class="sb-nav-link-icon"><i class="fa-solid fa-user-secret"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-secret"></i></div>
                             Add Agent
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -107,30 +105,28 @@
                            data-bs-target="#collapseAddMember"
                            aria-expanded="false"
                            aria-controls="collapseAddMember">
-                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Add Member
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseAddMember" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-
                                 <a class="nav-link" href="single.html" target="mainFrame">Single Member</a>
                                 <a class="nav-link" href="joint.html" target="mainFrame">Joint Member</a>
                                 <a class="nav-link" href="institutional.html" target="mainFrame">Institutional Member</a>
                             </nav>
                         </div>
 
-                        <!-- SYSTEM -->
-
-                       <!-- SYSTEM -->
+                        <!-- ADMINISTRATION -->
                         <div class="sb-sidenav-menu-heading">Administration</div>
 
                         <a class="nav-link collapsed" href="#"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseSystem"
-                        aria-expanded="false"
-                        aria-controls="collapseSystem">
-                            <div class="sb-nav-link-icon"><i class="fa-brands fa-black-tie"></i></div>
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseSystem"
+                           aria-expanded="false"
+                           aria-controls="collapseSystem">
+                            <!-- icône corrigée, même taille que les autres -->
+                            <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
                             Administration
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -150,10 +146,10 @@
 
                         <!-- TRANSACTIONS -->
                         <a class="nav-link collapsed" href="#"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseTransactions"
-                        aria-expanded="false"
-                        aria-controls="collapseTransactions">
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseTransactions"
+                           aria-expanded="false"
+                           aria-controls="collapseTransactions">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-database"></i></div>
                             Transactions
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -167,26 +163,26 @@
                             </nav>
                         </div>
 
+                    </div>
+                </div>
 
-
-                 </div>
- </div>
-
-
-               <button style="
-  padding: 12px 24px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-"
-onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='scale(1.1)';"
-onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='scale(1)';">
-Support Ticket System
-</button>
+                <!-- Support button -->
+                <div class="sb-sidenav-footer text-center">
+                    <button style="
+                        padding: 12px 24px;
+                        background-color: #3498db;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 16px;
+                        border-radius: 5px;
+                        transition: background-color 0.3s ease, transform 0.3s ease;
+                    "
+                    onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='scale(1)';">
+                        Support Ticket System
+                    </button>
+                </div>
 
             </nav>
         </div>

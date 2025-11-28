@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — Bulk Emails</title>
+  <meta name="description" content="Documentation guide for the Bulk Emails section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,38 +17,66 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>Bulk Emails</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The Bulk Emails section allows Unit Master users to send the same email to many clients
+          at once, making it easy to share announcements, updates and important notices.
         </p>
       </div>
     </header>
 
     <div class="content">
 
+      <!-- INTRO -->
+      <section id="bulk-intro">
+        <h2>What are Bulk Emails?</h2>
+        <p>
+          The <strong>Bulk Emails</strong> page is used when you need to send one message to a large
+          group of clients at the same time. Instead of sending individual emails, you prepare the
+          content once and send it to all selected recipients in a single action.
+        </p>
+        <p>
+          This is useful for general announcements, marketing campaigns and reminders that apply
+          to many clients, and helps ensure that everyone receives the same information.
+        </p>
+      </section>
 
       <!-- BULK EMAILS -->
       <details id="bulk-emails" class="accordion">
-        <summary>9. Bulk Emails</summary>
+        <summary>Send Bulk Emails</summary>
         <div class="accordion-body">
           <p>
             The <strong>Bulk Emails</strong> section is used to send emails to many clients at once.
             Typical uses include:
           </p>
-          <ul>
-            <li>Announcements or updates</li>
-            <li>Campaigns or product information</li>
-            <li>Important notices or reminders</li>
+          <ul class="clean">
+            <li>Announcements or general updates.</li>
+            <li>Campaigns or product information.</li>
+            <li>Important notices or payment / statement reminders.</li>
           </ul>
-           <figure class="step-image">
-              <img src="/dist/assets/img/bulk.png" alt="EOD" height="360px" width="560px "/>
+
+          <figure class="step-image">
+            <img src="/dist/assets/img/bulk.png"
+                 alt="Bulk email screen"
+                 height="360" width="560" />
           </figure>
+
           <p>
-            Bulk email tools save time and ensure consistent messages reach all relevant clients.
+            Bulk email tools save time and ensure that consistent messages reach all relevant clients.
           </p>
-          <p>Enter the message you want to send</p>
-          <p>Put the email adress</p>
-          <p>You choose the file you want to upload </p>
+
+          <h3>How to prepare a bulk email</h3>
+          <p>On the Bulk Emails screen, you typically:</p>
+          <ul class="clean">
+            <li><strong>Enter the message</strong> you want to send in the content area.</li>
+            <li><strong>Enter or select the email addresses</strong> of the recipients.</li>
+            <li><strong>Choose the file to upload</strong> if you are using a file with a list of recipients or attachments.</li>
+          </ul>
+
+          <p>
+            After completing the fields and reviewing the message, send the email so that all
+            selected clients receive it at the same time.
+          </p>
         </div>
       </details>
 
@@ -62,7 +90,6 @@
         On this page <span class="badge">Administration</span>
       </div>
       <ul class="toc">
-
         <li><a href="#bulk-emails">Bulk Emails</a></li>
       </ul>
     </div>
@@ -85,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — User Audit</title>
+  <meta name="description" content="Documentation guide for the User Audit section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,9 +17,10 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>User Audit</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The User Audit section records changes made inside Unit Master so that administrators
+          can see who did what and when, for better control and accountability.
         </p>
       </div>
     </header>
@@ -27,45 +28,44 @@
     <div class="content">
 
       <!-- INTRO -->
-      <section id="admin-intro">
-        <h2>What is the Administration Section?</h2>
+      <section id="audit-intro">
+        <h2>What is User Audit?</h2>
         <p>
-          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
-          From here you can manage system modules, user roles, access controls, and monitor key system activities
-          such as login activity, audits, error logs and bulk communications.
+          The <strong>User Audit</strong> page provides a detailed history of actions performed
+          by users inside Unit Master. It is used to trace important changes such as updates,
+          approvals and deletions.
         </p>
         <p>
-          This guide explains each item in the Administration menu and what it is used for.
+          This audit trail is essential for <strong>accountability</strong>, <strong>compliance</strong>
+          and <strong>internal control</strong>, especially in financial and regulated environments.
         </p>
       </section>
 
-
-
       <!-- USER AUDIT -->
       <details id="user-audit" class="accordion">
-        <summary>6. User Audit</summary>
+        <summary> View User Audit</summary>
         <div class="accordion-body">
           <p>
             The <strong>User Audit</strong> tracks actions performed inside the system.
             It helps answer questions such as:
           </p>
-          <ul>
-            <li>Who changed a record?</li>
-            <li>What was updated or deleted?</li>
-            <li>When did the change happen?</li>
+          <ul class="clean">
+            <li><strong>Who</strong> changed a record?</li>
+            <li><strong>What</strong> was updated, created or deleted?</li>
+            <li><strong>When</strong> did the change happen?</li>
           </ul>
           <p>
-            This is essential for accountability, compliance and internal control.
+            By reviewing the audit log, administrators and auditors can verify that users are
+            following procedures and can investigate any unusual or unauthorised changes.
           </p>
         </div>
       </details>
-
 
     </div>
   </main>
 
   <!-- TABLE OF CONTENTS -->
-  <aside class="card" aria-label="Table of contents">
+  <!-- <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
         On this page <span class="badge">Administration</span>
@@ -74,7 +74,7 @@
         <li><a href="#user-audit">User Audit</a></li>
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

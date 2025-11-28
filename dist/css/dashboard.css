@@ -9,7 +9,7 @@
   --max-sidew: 300px;
 }
 
-/* Reset de base */
+/* Reset */
 *{
   box-sizing:border-box;
 }
@@ -23,17 +23,17 @@ body{
   background:linear-gradient(180deg,var(--bg),#eef6ff);
 }
 
-/* Liens */
+/* Links */
 a{
   color:var(--accent);
   text-decoration:none;
 }
 
-/* Layout principal */
+/* Layout */
 .wrap{
   max-width:var(--container);
-  margin:20px auto 28px;      /* plus d’espace en haut */
-  padding:20px;
+  margin:24px auto 32px;   /* un peu plus d’espace en haut */
+  padding:24px;
   display:grid;
   grid-template-columns:1fr 320px;
   gap:24px;
@@ -43,11 +43,12 @@ a{
 @media (max-width:960px){
   .wrap{
     grid-template-columns:1fr;
-    padding:14px;
+    margin:72px auto 24px;
+    padding:20px 16px 24px;
   }
 }
 
-/* CARTES – totalement plates + rien de coupé */
+/* Cards */
 .card,
 .card-body{
   background:transparent !important;
@@ -55,7 +56,7 @@ a{
   box-shadow:none !important;
   border-radius:0 !important;
   padding:0;
-  overflow:visible !important;   /* très important pour voir le haut du contenu */
+  overflow:visible !important;
 }
 
 /* Header */
@@ -67,16 +68,17 @@ header.doc{
   padding:16px 0;
 }
 
+/* LOGO un peu plus grand */
 .brand{
-  width:56px;
-  height:56px;
-  border-radius:10px;
+  width:72px;          /* même taille que sur Introduction */
+  height:72px;
+  border-radius:16px;
   background:linear-gradient(135deg,var(--accent),#4f83ff);
   display:grid;
   place-items:center;
-  color:white;
+  color:#fff;
   font-weight:700;
-  font-size:18px;
+  font-size:28px;      /* texte UM plus grand */
 }
 
 h1{
@@ -90,7 +92,7 @@ p.lead{
   font-size:14px;
 }
 
-/* Contenu texte */
+/* Content */
 .content{
   padding:8px 0;
   overflow:visible;
@@ -112,7 +114,7 @@ section p{
   color:black;
 }
 
-/* Bloc définition */
+/* Definition block */
 .definition{
   border-left:4px solid var(--accent);
   background:#f8fbff;
@@ -121,7 +123,6 @@ section p{
   margin:8px 0;
 }
 
-/* Notes / texte secondaire */
 .muted{
   color:var(--muted);
   font-size:14px;
@@ -136,7 +137,7 @@ section p{
   color:#0f172a;
 }
 
-/* ACCORDION – plat comme la page, léger arrondi */
+/* Accordion */
 details.accordion{
   border:none;
   background:transparent;
@@ -144,12 +145,10 @@ details.accordion{
   margin:8px 0;
 }
 
-/* pas de fond spécial quand c’est ouvert */
 details.accordion[open]{
   background:transparent;
 }
 
-/* Barre cliquable */
 details.accordion summary{
   list-style:none;
   cursor:pointer;
@@ -158,8 +157,8 @@ details.accordion summary{
   color:var(--accent);
   position:relative;
   user-select:none;
-  background:transparent;   /* même fond que la page */
-  border-radius:8px;        /* coins un peu courbés */
+  background:transparent;
+  border-radius:8px;
 }
 
 details.accordion[open] summary{
@@ -184,21 +183,19 @@ details.accordion summary::after{
 details.accordion[open] summary::after{
   transform:translateY(-50%) rotate(180deg);
 }
-/* Effet survol comme Facebook */
+
 details.accordion summary{
   transition: background-color .18s ease;
 }
 
 details.accordion summary:hover{
-  background:#dce0e4;      /* petite couleur au survol */
+  background:#dce0e4;
 }
 
 details.accordion[open] summary{
   background:#dce0e4;
 }
 
-
-/* Contenu du déroulant */
 .accordion-body{
   padding:8px 18px 14px 18px;
   margin:0;
@@ -208,10 +205,10 @@ details.accordion[open] summary{
   color:#111827;
   border-bottom-left-radius:8px;
   border-bottom-right-radius:8px;
-  background:transparent;   /* plus de rectangle coloré */
+  background:transparent;
 }
 
-/* Images des étapes */
+/* Step images */
 .step-inline{
   display:flex;
   gap:16px;
@@ -239,7 +236,7 @@ details.accordion[open] summary{
   box-shadow:0 4px 16px rgba(15,23,42,0.12);
 }
 
-/* TABLE OF CONTENTS */
+/* TOC */
 aside{
   margin-top:8px;
   padding-left:32px;
@@ -273,7 +270,6 @@ aside{
   background:#eef6ff;
 }
 
-/* Petit texte bas de carte */
 footer.small{
   margin-top:12px;
   font-size:13px;
@@ -291,7 +287,7 @@ footer.small{
   margin-left:8px;
 }
 
-/* Impression */
+/* Print */
 @media print{
   body{
     background:white;

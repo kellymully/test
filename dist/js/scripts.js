@@ -28,62 +28,124 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     // =======================
-    // 2. Recherche de pages
-    // =======================
+// 2. Recherche de pages
+// =======================
 
-    const searchInput  = document.querySelector(
-        'form .form-control[placeholder="Search for..."]'
-    );
-    const searchButton = document.getElementById('btnNavbarSearch');
+const searchInput  = document.getElementById('sidebarSearch');
+const searchButton = document.getElementById('btnNavbarSearch');
+const resultsBox   = document.getElementById('searchResults');
 
-    // Iframe où on charge les pages (dashboard.html, etc.)
-    const iframe = document.querySelector('iframe[name="mainFrame"]');
+// Iframe où on charge les pages (dashboard.html, etc.)
+const iframe = document.querySelector('iframe[name="mainFrame"]');
 
-    // Liens du menu latéral qui ciblent l'iframe
-    const navLinks = document.querySelectorAll(
-        '#sidenavAccordion a.nav-link[target="mainFrame"]'
-    );
+// Liens du menu latéral qui ciblent l'iframe
+const navLinks = document.querySelectorAll(
+    '#sidenavAccordion a.nav-link[target="mainFrame"]'
+);
 
-    function performSearch() {
-        if (!searchInput) return;
+// Ouvre la 1ʳᵉ page trouvée (Enter ou clic sur le bouton)
+function performSearch() {
+    if (!searchInput) return;
 
-        const query = searchInput.value.trim().toLowerCase();
-        if (!query) return;
+    const query = searchInput.value.trim().toLowerCase();
+    if (!query) return;
 
-        let matchedLink = null;
+    let matchedLink = null;
 
-        navLinks.forEach(link => {
-            const text = link.textContent.toLowerCase();
-            if (!matchedLink && text.includes(query)) {
-                matchedLink = link;
-            }
-        });
-
-        if (matchedLink) {
-            const url = matchedLink.getAttribute('href');
-
-            if (iframe) {
-                iframe.src = url; // charge la page dans l'iframe
-            } else {
-                window.location.href = url; // fallback si pas d'iframe
-            }
-        } else {
-            alert('Aucune page trouvée pour : "' + query + '"');
+    navLinks.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        if (!matchedLink && text.includes(query)) {
+            matchedLink = link;
         }
+    });
+
+    if (matchedLink) {
+        const url = matchedLink.getAttribute('href');
+
+        if (iframe) {
+            iframe.src = url; // charge la page dans l'iframe
+        } else {
+            window.location.href = url; // fallback
+        }
+    } else {
+        alert('Aucune page trouvée pour : "' + query + '"');
+    }
+}
+
+// Met à jour la liste des résultats sous la barre de recherche
+function updateSearchResults() {
+    if (!searchInput || !resultsBox) return;
+
+    const query = searchInput.value.trim().toLowerCase();
+
+    // Nettoie la liste
+    resultsBox.innerHTML = '';
+
+    if (!query) {
+        resultsBox.style.display = 'none';
+        return;
     }
 
-    if (searchButton && searchInput) {
-        searchButton.addEventListener('click', function (e) {
+    const matches = [];
+
+    navLinks.forEach(link => {
+        const text = link.textContent.trim();
+        if (text.toLowerCase().includes(query)) {
+            matches.push({ link, text });
+        }
+    });
+
+    if (!matches.length) {
+        resultsBox.style.display = 'none';
+        return;
+    }
+
+    matches.forEach(({ link, text }) => {
+        const item = document.createElement('div');
+        item.className = 'search-result-item';
+        item.textContent = text;
+
+        item.addEventListener('click', () => {
+            const url = link.getAttribute('href');
+            if (iframe) {
+                iframe.src = url;
+            } else {
+                window.location.href = url;
+            }
+            resultsBox.style.display = 'none';
+        });
+
+        resultsBox.appendChild(item);
+    });
+
+    resultsBox.style.display = 'block';
+}
+
+if (searchInput && searchButton) {
+    // Clic sur le bouton loupe = ouvre la 1ʳᵉ page trouvée
+    searchButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        performSearch();
+    });
+
+    // Touche Enter = ouvre la 1ʳᵉ page trouvée
+    searchInput.addEventListener('keyup', function (e) {
+        if (e.key === 'Enter') {
             e.preventDefault();
             performSearch();
-        });
+        } else {
+            // sur chaque frappe, met à jour la liste des résultats
+            updateSearchResults();
+        }
+    });
 
-        searchInput.addEventListener('keyup', function (e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                performSearch();
-            }
-        });
+    // Quand on tape sans Enter (input)
+    searchInput.addEventListener('input', updateSearchResults);
+}
+
+// Clique en dehors = fermer la liste
+document.addEventListener('click', function (e) {
+    if (resultsBox && !resultsBox.contains(e.target) && e.target !== searchInput) {
+        resultsBox.style.display = 'none';
     }
-
 });

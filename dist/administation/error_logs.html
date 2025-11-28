@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — Error Logs</title>
+  <meta name="description" content="Documentation guide for the Error Logs section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,9 +17,10 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>Error Logs</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The Error Logs section records technical issues that occur while Unit Master is running,
+          helping administrators and support teams diagnose and fix problems.
         </p>
       </div>
     </header>
@@ -27,23 +28,22 @@
     <div class="content">
 
       <!-- INTRO -->
-      <section id="admin-intro">
-        <h2>What is the Administration Section?</h2>
+      <section id="error-intro">
+        <h2>What are Error Logs?</h2>
         <p>
-          The <strong>Administration</strong> area is where system administrators configure how Unit Master works.
-          From here you can manage system modules, user roles, access controls, and monitor key system activities
-          such as login activity, audits, error logs and bulk communications.
+          <strong>Error Logs</strong> are a technical record of failures or unexpected behaviour in the system.
+          Whenever Unit Master encounters an error, information about the problem is written to the log so that
+          it can be reviewed later.
         </p>
         <p>
-          This guide explains each item in the Administration menu and what it is used for.
+          These logs are mainly used by system administrators and developers to understand what went wrong,
+          reproduce the issue if needed, and apply a fix to improve system stability.
         </p>
       </section>
 
-
-
       <!-- ERROR LOGS -->
       <details id="error-logs" class="accordion">
-        <summary>8. Error Logs</summary>
+        <summary>View Error Logs</summary>
         <div class="accordion-body">
           <p>
             <strong>Error Logs</strong> capture technical issues that occur while the system is running.
@@ -52,26 +52,30 @@
           <p>
             These logs typically store:
           </p>
-          <ul>
-            <li>Error type and message</li>
-            <li>Date and time of the error</li>
-            <li>Technical details to help developers diagnose the issue</li>
+          <ul class="clean">
+            <li><strong>Error type and message</strong> A short description of what went wrong.</li>
+            <li><strong>Date and time</strong> When the error occurred.</li>
+            <li><strong>Technical details</strong> Extra information to help developers diagnose the issue.</li>
           </ul>
+
           <figure class="step-image">
-              <img src="/dist/assets/img/logs.png" alt="EOD" height="360px" width="560px "/>
-                </figure>
+            <img src="/dist/assets/img/logs.png"
+                 alt="Error logs list screen"
+                 height="360" width="560" />
+          </figure>
+
           <p>
             Administrators and support teams use error logs to troubleshoot problems and improve stability.
+            In many cases, reviewing the log is the first step when a user reports that “something is not working”.
           </p>
         </div>
       </details>
-
 
     </div>
   </main>
 
   <!-- TABLE OF CONTENTS -->
-  <aside class="card" aria-label="Table of contents">
+  <!-- <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
         On this page <span class="badge">Administration</span>
@@ -80,7 +84,7 @@
         <li><a href="#error-logs">Error Logs</a></li>
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
@@ -99,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>

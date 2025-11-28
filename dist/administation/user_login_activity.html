@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit Master — Administration</title>
-  <meta name="description" content="Documentation guide for the Administration section in Unit Master." />
+  <title>Unit Master — User Login Activity</title>
+  <meta name="description" content="Documentation guide for the User Login Activity section in Unit Master." />
   <!-- Reuse your global doc styles -->
   <link rel="stylesheet" href="/dist/css/dashboard.css" />
 </head>
@@ -17,57 +17,70 @@
     <header class="doc">
       <div class="brand">UM</div>
       <div>
-        <h1>Administration Guide</h1>
+        <h1>User Login Activity</h1>
         <p class="lead">
-          Overview of the Administration section in Unit Master, including system modules, roles, control categories and system monitoring tools.
+          The User Login Activity section shows who has logged into Unit Master, when they logged in
+          and other basic details that help administrators monitor access to the system.
         </p>
       </div>
     </header>
 
     <div class="content">
 
+      <!-- INTRO -->
+      <section id="login-intro">
+        <h2>What is User Login Activity?</h2>
+        <p>
+          The <strong>User Login Activity</strong> page provides a history of login events for all users.
+          It is mainly used by system administrators and auditors to review how the system is being accessed.
+        </p>
+        <p>
+          By checking this page regularly, administrators can identify unusual patterns, such as logins
+          at unexpected times or from unexpected accounts, and follow up if needed.
+        </p>
+      </section>
 
       <!-- USER LOGIN ACTIVITY -->
       <details id="login-activity" class="accordion">
-        <summary>4. User Login Activity</summary>
+        <summary>View User Login Activity</summary>
         <div class="accordion-body">
           <p>
             The <strong>User Login Activity</strong> section tracks login details for users.
             It records key information such as:
           </p>
-          <ul>
-            <li>Login date and time</li>
-            <li>Which user logged in</li>
-            <li>Sometimes the location or device used, depending on configuration</li>
+          <ul class="clean">
+            <li><strong>Login date and time</strong> When the user accessed the system.</li>
+            <li><strong>User name or ID</strong> Which user account logged in.</li>
+            <li><strong>Additional details</strong> Sometimes the location or device used, depending on configuration.</li>
           </ul>
+
           <figure class="step-image">
-              <img src="/dist/assets/img/login.png" alt="EOD" height="360px" width="560px "/>
-                </figure>
+            <img src="/dist/assets/img/login.png"
+                 alt="User login activity screen"
+                 height="360" width="560" />
+          </figure>
+
           <p>
             This log helps administrators monitor access, detect unusual activity and support audits
-            or security reviews.
+            or security reviews. It is a useful tool for both security and compliance.
           </p>
         </div>
       </details>
 
-
-
     </div>
   </main>
 
-  <!-- TABLE OF CONTENTS -->
+  <!-- TABLE OF CONTENTS
   <aside class="card" aria-label="Table of contents">
     <div>
       <div class="toc-title">
         On this page <span class="badge">Administration</span>
       </div>
       <ul class="toc">
-        
         <li><a href="#login-activity">User Login Activity</a></li>
-
       </ul>
     </div>
-  </aside>
+  </aside> -->
 
 </div>
 
@@ -86,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-
 
 </body>
 </html>
