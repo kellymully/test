@@ -28,7 +28,10 @@
         </a>
 
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+        <button
+            class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+            id="sidebarToggle"
+            type="button">
             <i class="fas fa-bars"></i>
         </button>
 
@@ -80,6 +83,24 @@
                             Introduction
                         </a>
 
+                        <!-- Securities -->
+
+                        <!-- Collapse Onboarding (Agents) -->
+                        <a class="nav-link collapsed" href="#"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseOnboarding1"
+                           aria-expanded="false"
+                           aria-controls="collapseOnboarding1">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-shield-halved"></i>[</div>
+                            Securities
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseOnboarding1" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="securities.html" target="mainFrame">Securities/Fund</a>
+                            </nav>
+                        </div>
+
                         <!-- ONBOARDING -->
                         <div class="sb-sidenav-menu-heading">Members Onboarding</div>
 
@@ -125,7 +146,6 @@
                            data-bs-target="#collapseSystem"
                            aria-expanded="false"
                            aria-controls="collapseSystem">
-                            <!-- icône corrigée, même taille que les autres -->
                             <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
                             Administration
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -190,7 +210,7 @@
         <!-- CONTENT AREA -->
         <div id="layoutSidenav_content">
             <main>
-                <!-- Iframe qui charge les pages de documentation -->
+                <!-- Iframe that loads the documentation pages -->
                 <iframe
                     src="dashboard.html"
                     name="mainFrame"
