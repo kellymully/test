@@ -11380,3 +11380,30 @@ body.sb-nav-fixed {
     font-weight: 600;
     letter-spacing: 0.05em;
 }
+
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1050;
+  margin-top: 4px;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+  max-height: 260px;
+  overflow-y: auto;
+  min-width: 220px;
+  display: none;
+}
+
+.search-result-item {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: #111827;
+}
+
+.search-result-item:hover {
+  background-color: #eff6ff;
+}

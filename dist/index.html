@@ -1,252 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Unit Master Documentation Dashboard" />
-    <meta name="author" content="Unit Master" />
-    <title>Unit Master - Dashboard</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Unit Master Documentation Dashboard" />
+  <meta name="author" content="Unit Master" />
+  <title>Unit Master - Dashboard</title>
 
-    <!-- SB Admin CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+  <!-- SB Admin CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+  <!-- Petit style pour le déroulant de recherche -->
+  <style>
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1050;
+      margin-top: 4px;
+      background: #ffffff;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+      max-height: 260px;
+      overflow-y: auto;
+      min-width: 220px;
+      display: none;
+    }
+    .search-result-item {
+      padding: 0.45rem 0.75rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+      color: #111827;
+      white-space: nowrap;
+    }
+    .search-result-item:hover {
+      background-color: #eff6ff;
+    }
+  </style>
 </head>
 <body class="sb-nav-fixed">
-    <!-- TOP NAVBAR -->
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <!-- TOP NAVBAR -->
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
-        <!-- Navbar Brand -->
-        <a class="navbar-brand ps-3" href="#">
-            <img
-                src="assets/img/wiz global.jpg"
-                alt="UM logo"
-                style="height:40px; width:auto; margin-right:8px; object-fit:contain; vertical-align:middle;">
-            Unit Master
-        </a>
+    <!-- Navbar Brand -->
+    <a class="navbar-brand ps-3" href="#">
+      <img
+        src="assets/img/wiz global.jpg"
+        alt="UM logo"
+        style="height:40px; width:auto; margin-right:8px; object-fit:contain; vertical-align:middle;">
+      Unit Master
+    </a>
 
-        <!-- Sidebar Toggle-->
-        <button
-            class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
-            id="sidebarToggle"
-            type="button">
-            <i class="fas fa-bars"></i>
+    <!-- Sidebar Toggle -->
+    <button
+      class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+      id="sidebarToggle"
+      type="button">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Search form -->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
+          onsubmit="return false;">
+      <div class="input-group position-relative">
+        <input
+          class="form-control"
+          id="sidebarSearch"
+          type="text"
+          placeholder="Search pages..."
+          aria-label="Search pages"
+          aria-describedby="btnNavbarSearch"
+        />
+        <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+          <i class="fas fa-search"></i>
         </button>
 
-        <!-- Search form -->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
-              onsubmit="return false;">
-            <div class="input-group position-relative">
-                <input
-                    class="form-control"
-                    id="sidebarSearch"
-                    type="text"
-                    placeholder="Search pages..."
-                    aria-label="Search pages"
-                    aria-describedby="btnNavbarSearch"
-                />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button">
-                    <i class="fas fa-search"></i>
-                </button>
+        <!-- Petit déroulant des résultats -->
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </form>
 
-                <!-- Petit déroulant des résultats -->
-                <div id="searchResults" class="search-results"></div>
-            </div>
-        </form>
-
-        <!-- Right side (user menu) -->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                   data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user fa-fw"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
-                </ul>
-            </li>
+    <!-- Right side (user menu) -->
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user fa-fw"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#!">Settings</a></li>
+          <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#!">Logout</a></li>
         </ul>
-    </nav>
+      </li>
+    </ul>
+  </nav>
 
-    <!-- MAIN LAYOUT -->
-    <div id="layoutSidenav">
-        <!-- SIDE NAV -->
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Documentation</div>
+  <!-- MAIN LAYOUT -->
+  <div id="layoutSidenav">
+    <!-- SIDE NAV -->
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="nav">
+            <div class="sb-sidenav-menu-heading">Documentation</div>
 
-                        <!-- Introduction -->
-                        <a class="nav-link" href="dashboard.html" target="mainFrame">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Introduction
-                        </a>
+            <!-- Introduction -->
+            <a class="nav-link" href="dashboard.html" target="mainFrame">
+              <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+              Introduction
+            </a>
 
-                        Securities
-                        <a class="nav-link collapsed" href="#"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapseOnboarding1"
-                           aria-expanded="false"
-                           aria-controls="collapseOnboarding1">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                            Securities
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseOnboarding1" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="securities.html" target="mainFrame">Securities/Fund</a>
-                            </nav>
-                        </div>
+            <!-- Securities -->
+            <a class="nav-link collapsed" href="#"
+               data-bs-toggle="collapse"
+               data-bs-target="#collapseSecurities"
+               aria-expanded="false"
+               aria-controls="collapseSecurities">
+              <div class="sb-nav-link-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              Securities
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseSecurities" data-bs-parent="#sidenavAccordion">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="securities.html" target="mainFrame">Securities / Fund</a>
+              </nav>
+            </div>
 
-                        <!-- ONBOARDING -->
-                        <div class="sb-sidenav-menu-heading">Members Onboarding</div>
+            <!-- ONBOARDING -->
+            <div class="sb-sidenav-menu-heading">Members Onboarding</div>
 
-                        <!-- Add Agent -->
-                        <!-- <a class="nav-link collapsed" href="#"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapseOnboarding"
-                           aria-expanded="false"
-                           aria-controls="collapseOnboarding">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-secret"></i></div>
-                            Add Agent
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseOnboarding" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="agents.html" target="mainFrame">Agents</a>
-                            </nav>
-                        </div> -->
-                        <a class="nav-link" href="agents.html" target="mainFrame">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Add Agent
-                        </a>
+            <!-- Add Agent -->
+            <a class="nav-link collapsed" href="#"
+               data-bs-toggle="collapse"
+               data-bs-target="#collapseOnboarding"
+               aria-expanded="false"
+               aria-controls="collapseOnboarding">
+              <div class="sb-nav-link-icon"><i class="fa-solid fa-user-secret"></i></div>
+              Add Agent
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseOnboarding" data-bs-parent="#sidenavAccordion">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="agents.html" target="mainFrame">Agents</a>
+              </nav>
+            </div>
 
-                        <!-- Add Member -->
-                        <a class="nav-link collapsed" href="#"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapseAddMember"
-                           aria-expanded="false"
-                           aria-controls="collapseAddMember">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Add Member
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseAddMember" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="single.html" target="mainFrame">Single Member</a>
-                                <a class="nav-link" href="joint.html" target="mainFrame">Joint Member</a>
-                                <a class="nav-link" href="institutional.html" target="mainFrame">Institutional Member</a>
-                            </nav>
-                        </div>
+            <!-- Add Member -->
+            <a class="nav-link collapsed" href="#"
+               data-bs-toggle="collapse"
+               data-bs-target="#collapseAddMember"
+               aria-expanded="false"
+               aria-controls="collapseAddMember">
+              <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+              Add Member
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseAddMember" data-bs-parent="#sidenavAccordion">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="single.html" target="mainFrame">Single Member</a>
+                <a class="nav-link" href="joint.html" target="mainFrame">Joint Member</a>
+                <a class="nav-link" href="institutional.html" target="mainFrame">Institutional Member</a>
+              </nav>
+            </div>
 
-                        <!-- ADMINISTRATION -->
-                        <div class="sb-sidenav-menu-heading">Administration</div>
+            <!-- ADMINISTRATION -->
+            <div class="sb-sidenav-menu-heading">Administration</div>
 
-                        <a class="nav-link collapsed" href="#"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapseSystem"
-                           aria-expanded="false"
-                           aria-controls="collapseSystem">
-                            <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
-                            Administration
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseSystem" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/dist/administation/system_modules.html" target="mainFrame">System Modules</a>
-                                <a class="nav-link" href="/dist/administation/roles.html" target="mainFrame">Roles</a>
-                                <a class="nav-link" href="/dist/administation/control_categories.html" target="mainFrame">Control Categories</a>
-                                <a class="nav-link" href="/dist/administation/user_login_activity.html" target="mainFrame">User Login Activity</a>
-                                <a class="nav-link" href="/dist/administation/company.html" target="mainFrame">Company</a>
-                                <a class="nav-link" href="/dist/administation/user_audit.html" target="mainFrame">User Audit</a>
-                                <a class="nav-link" href="/dist/administation/communication_templates.html" target="mainFrame">Communication Templates</a>
-                                <a class="nav-link" href="/dist/administation/error_logs.html" target="mainFrame">Error Logs</a>
-                                <a class="nav-link" href="/dist/administation/bulk_emails.html" target="mainFrame">Bulk Emails</a>
-                            </nav>
-                        </div>
+            <a class="nav-link collapsed" href="#"
+               data-bs-toggle="collapse"
+               data-bs-target="#collapseSystem"
+               aria-expanded="false"
+               aria-controls="collapseSystem">
+              <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
+              Administration
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseSystem" data-bs-parent="#sidenavAccordion">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="/dist/administation/system_modules.html" target="mainFrame">System Modules</a>
+                <a class="nav-link" href="/dist/administation/roles.html" target="mainFrame">Roles</a>
+                <a class="nav-link" href="/dist/administation/control_categories.html" target="mainFrame">Control Categories</a>
+                <a class="nav-link" href="/dist/administation/user_login_activity.html" target="mainFrame">User Login Activity</a>
+                <a class="nav-link" href="/dist/administation/company.html" target="mainFrame">Company</a>
+                <a class="nav-link" href="/dist/administation/user_audit.html" target="mainFrame">User Audit</a>
+                <a class="nav-link" href="/dist/administation/communication_templates.html" target="mainFrame">Communication Templates</a>
+                <a class="nav-link" href="/dist/administation/error_logs.html" target="mainFrame">Error Logs</a>
+                <a class="nav-link" href="/dist/administation/bulk_emails.html" target="mainFrame">Bulk Emails</a>
+              </nav>
+            </div>
 
-                        <!-- TRANSACTIONS -->
-                        <a class="nav-link collapsed" href="#"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapseTransactions"
-                           aria-expanded="false"
-                           aria-controls="collapseTransactions">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-database"></i></div>
-                            Transactions
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseTransactions" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/dist/transactions/Interest_computation.html" target="mainFrame">Interest computation</a>
-                                <a class="nav-link" href="/dist/transactions/eod.html" target="mainFrame">EOD Processing</a>
-                                <a class="nav-link" href="/dist/transactions/fund_switch.html" target="mainFrame">Fund Switch</a>
-                                <a class="nav-link" href="/dist/transactions/reverse_interest.html" target="mainFrame">Reverse Interest</a>
-                            </nav>
-                        </div>
+            <!-- TRANSACTIONS -->
+            <a class="nav-link collapsed" href="#"
+               data-bs-toggle="collapse"
+               data-bs-target="#collapseTransactions"
+               aria-expanded="false"
+               aria-controls="collapseTransactions">
+              <div class="sb-nav-link-icon"><i class="fa-solid fa-database"></i></div>
+              Transactions
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseTransactions" data-bs-parent="#sidenavAccordion">
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="/dist/transactions/Interest_computation.html" target="mainFrame">Interest computation</a>
+                <a class="nav-link" href="/dist/transactions/eod.html" target="mainFrame">EOD Processing</a>
+                <a class="nav-link" href="/dist/transactions/fund_switch.html" target="mainFrame">Fund Switch</a>
+                <a class="nav-link" href="/dist/transactions/reverse_interest.html" target="mainFrame">Reverse Interest</a>
+              </nav>
+            </div>
 
-                    </div>
-                </div>
-
-                <!-- Support button -->
-                <div class="sb-sidenav-footer text-center">
-                    <button style="
-                        padding: 12px 24px;
-                        background-color: #3498db;
-                        color: white;
-                        border: none;
-                        cursor: pointer;
-                        font-size: 16px;
-                        border-radius: 5px;
-                        transition: background-color 0.3s ease, transform 0.3s ease;
-                    "
-                    onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='scale(1.05)';"
-                    onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='scale(1)';">
-                        Support Ticket System
-                    </button>
-                </div>
-
-            </nav>
+          </div>
         </div>
 
-        <!-- CONTENT AREA -->
-        <div id="layoutSidenav_content">
-            <main>
-                <!-- Iframe that loads the documentation pages -->
-                <iframe
-                    src="dashboard.html"
-                    name="mainFrame"
-                    class="content-frame"
-                ></iframe>
-            </main>
-
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Unit Master 2025</div>
-                        <div>
-                            <a href="#!">Privacy Policy</a>
-                            &middot;
-                            <a href="#!">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+        <!-- Support button -->
+        <div class="sb-sidenav-footer text-center">
+          <button style="
+              padding: 12px 24px;
+              background-color: #3498db;
+              color: white;
+              border: none;
+              cursor: pointer;
+              font-size: 16px;
+              border-radius: 5px;
+              transition: background-color 0.3s ease, transform 0.3s ease;
+          "
+          onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='scale(1.05)';"
+          onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='scale(1)';">
+            Support Ticket System
+          </button>
         </div>
+
+      </nav>
     </div>
 
-    <!-- Bootstrap & Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            crossorigin="anonymous"></script>
+    <!-- CONTENT AREA -->
+    <div id="layoutSidenav_content">
+      <main>
+        <!-- Iframe that loads the documentation pages -->
+        <iframe
+          src="dashboard.html"
+          name="mainFrame"
+          class="content-frame"
+        ></iframe>
+      </main>
 
-    <!-- IMPORTANT : chemin vers ton scripts.js -->
-    <script src="js/scripts.js"></script>
-    <!-- Si ton fichier est vraiment dans /dist/js/scripts.js, remets ce chemin-là -->
+      <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; Unit Master 2025</div>
+            <div>
+              <a href="#!">Privacy Policy</a>
+              &middot;
+              <a href="#!">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
 
+  <!-- Bootstrap bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+          crossorigin="anonymous"></script>
+
+  <!-- Script direct dans la page pour être sûr qu'il est chargé -->
+  <script>
+    console.log('scripts embarqué chargé');
+
+    window.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM prêt');
+
+      // 1. Burger menu
+      const sidebarToggle = document.body.querySelector('#sidebarToggle');
+      if (sidebarToggle) {
+        console.log('sidebarToggle trouvé');
+        sidebarToggle.addEventListener('click', function (event) {
+          event.preventDefault();
+          document.body.classList.toggle('sb-sidenav-toggled');
+        });
+      } else {
+        console.log('sidebarToggle introuvable');
+      }
+
+      // 2. Recherche avec déroulant
+      const searchInput  = document.getElementById('sidebarSearch');
+      const searchButton = document.getElementById('btnNavbarSearch');
+      const resultsBox   = document.getElementById('searchResults');
+      const iframe       = document.querySelector('iframe[name="mainFrame"]');
+      const navLinks     = document.querySelectorAll(
+        '#sidenavAccordion a.nav-link[target="mainFrame"]'
+      );
+
+      console.log('Nombre de liens trouvés pour la recherche :', navLinks.length);
+
+      function openFirstMatch() {
+        if (!searchInput) return;
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) return;
+
+        let matchedLink = null;
+        navLinks.forEach(link => {
+          const text = link.textContent.toLowerCase();
+          if (!matchedLink && text.includes(query)) {
+            matchedLink = link;
+          }
+        });
+
+        if (matchedLink) {
+          const url = matchedLink.getAttribute('href');
+          console.log('Ouverture de', url);
+          if (iframe) {
+            iframe.src = url;
+          } else {
+            window.location.href = url;
+          }
+        } else {
+          alert('No page found for: "' + query + '"');
+        }
+      }
+
+      function updateSearchResults() {
+        if (!searchInput || !resultsBox) return;
+        const query = searchInput.value.trim().toLowerCase();
+
+        resultsBox.innerHTML = '';
+
+        if (!query) {
+          resultsBox.style.display = 'none';
+          return;
+        }
+
+        const matches = [];
+        navLinks.forEach(link => {
+          const text = link.textContent.trim();
+          if (text.toLowerCase().includes(query)) {
+            matches.push({ link, text });
+          }
+        });
+
+        if (!matches.length) {
+          resultsBox.style.display = 'none';
+          return;
+        }
+
+        matches.forEach(({ link, text }) => {
+          const item = document.createElement('div');
+          item.className = 'search-result-item';
+          item.textContent = text;
+
+          item.addEventListener('click', () => {
+            const url = link.getAttribute('href');
+            if (iframe) {
+              iframe.src = url;
+            } else {
+              window.location.href = url;
+            }
+            resultsBox.style.display = 'none';
+          });
+
+          resultsBox.appendChild(item);
+        });
+
+        resultsBox.style.display = 'block';
+      }
+
+      if (searchInput && searchButton) {
+        searchButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          openFirstMatch();
+        });
+
+        searchInput.addEventListener('keyup', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            openFirstMatch();
+          } else {
+            updateSearchResults();
+          }
+        });
+
+        searchInput.addEventListener('input', updateSearchResults);
+      }
+
+      document.addEventListener('click', function (e) {
+        if (resultsBox
+          && !resultsBox.contains(e.target)
+          && e.target !== searchInput) {
+          resultsBox.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
