@@ -32,7 +32,7 @@ a{
 /* Layout */
 .wrap{
   max-width:var(--container);
-  margin:24px auto 32px;   /* un peu plus d’espace en haut */
+  margin:10px auto 32px;   /* un peu plus d’espace en haut */
   padding:24px;
   display:grid;
   grid-template-columns:1fr 320px;

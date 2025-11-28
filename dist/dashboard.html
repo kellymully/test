@@ -6,6 +6,18 @@
   <title>Unit Master — Introduction</title>
   <meta name="description" content="Unit Master documentation — clear overview of features, onboarding, fees and reports." />
   <link rel="stylesheet" href="css/dashboard.css" />
+
+  <!-- Scroll smooth -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* section stay stuck on the top */
+    section[id],
+    details[id] {
+      scroll-margin-top: 24px;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -22,6 +34,7 @@
 
       <div class="content">
 
+        <!-- MEANING -->
         <section id="meaning">
           <h2>Meaning of Unit Master</h2>
           <div class="definition">
@@ -35,18 +48,22 @@
         </section>
 
         <!-- SECURITIES -->
-        <!-- id CORRIGÉ: "securities" pour matcher le TOC -->
         <details id="securities" class="accordion">
           <summary>Securities/Funds</summary>
           <div class="accordion-body">
             <p>
-              The <strong>Securities</strong> section is where clients can see how and where their money is invested.
-              It lists the different investment options or instruments in which funds are placed and allows clients
-              to review each holding.
+              <strong>Securities / Funds</strong> is a collective investment scheme where money from many investors
+              is pooled together to purchase short-term, low-risk, and highly liquid debt instruments.
             </p>
             <p>
-              This helps clients understand how their investments are allocated and how each security is performing,
-              improving transparency and trust.
+              A professional fund manager invests this pooled money in assets such as treasury bills, commercial paper,
+              and fixed deposits. The returns generated from these investments are distributed to the investors,
+              after deducting a management fee.
+            </p>
+            <p>
+              This structure provides investors with a way to earn a return on their savings while still having
+              easy access to their cash, making it suitable for both individual and institutional investors looking
+              for capital preservation and liquidity.
             </p>
           </div>
         </details>
@@ -155,17 +172,32 @@
     </aside>
   </div>
 
-  <!-- Smooth scroll for TOC links -->
+  <!-- Script TOC -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".toc a").forEach(function (link) {
-        link.addEventListener("click", function (e) {
+    document.addEventListener('DOMContentLoaded', function () {
+      const tocLinks = document.querySelectorAll('.toc a');
+
+      tocLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
-          const targetId = this.getAttribute("href").substring(1);
-          const target = document.getElementById(targetId);
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          const id = this.getAttribute('href').substring(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+
+          // si c'est un <details>, on l'ouvre
+          if (target.tagName.toLowerCase() === 'details') {
+            target.open = true;
           }
+
+          // Manual scroll offset
+          const rect = target.getBoundingClientRect();
+          const offset = window.pageYOffset + rect.top - 20;
+
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+          });
         });
       });
     });
